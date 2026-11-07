@@ -1,0 +1,41 @@
+aligner_bs: 32
+aligner_lr: 0.001
+aligner_steps: 10000
+clip_frac_max: 0.001
+f0_ceil: 500
+f0_floor: 70
+hf_dataset: SPRINGLab/IndicTTS_Telugu
+infer_ckpt: best
+max_dur: 12.0
+min_dur: 1.5
+model:
+  d_inner: 1024
+  d_model: 256
+  dec_layers: 6
+  drop: 0.2
+  enc_layers: 4
+  heads: 2
+  k: 9
+  n_bins: 256
+  n_mel: 80
+  vp_drop: 0.5
+  vp_filter: 256
+  vp_k: 3
+seed: 1234
+train:
+  bs: 32
+  ckpt_every: 1000
+  clip: 1.0
+  log_every: 50
+  min_lr_ratio: 0.04
+  peak_lr: 0.0005
+  total_steps: 25000
+  val_every: 500
+  warmup: 2000
+train_hours: 5.0
+trim_db: 35
+val_hours: 1.0
+var_range:
+- -4.0
+- 4.0
+vocoder_repo: nvidia/bigvgan_v2_22khz_80band_256x
